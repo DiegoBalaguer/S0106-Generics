@@ -9,11 +9,14 @@ package level02.exercise01.model;
 public class Person {
     private String name;
     private String surname;
+    private String invention;
     private int age;
 
-    public Person(String name, String surname, int age) {
+
+    public Person(String name, String surname, String invention, int age) {
         this.name = name;
         this.surname = surname;
+        this.invention = invention;
         this.age = age;
     }
 
@@ -41,11 +44,20 @@ public class Person {
         this.age = age;
     }
 
+    public String getInvention() {
+        return invention;
+    }
+
+    public void setInvention(String invention) {
+        this.invention = invention;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
+                ", invention='" + invention + '\'' +
                 ", age='" + age + '\'' +
                 '}';
     }

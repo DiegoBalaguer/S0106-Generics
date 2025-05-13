@@ -14,16 +14,25 @@ public class ApplicationController {
     public void run() {
         System.out.println("* CREATE GenericMethods..........." + System.lineSeparator());
 
-        applicationWorkers.addPerson();
+        applicationWorkers.addPersons();
 
+        System.out.println(System.lineSeparator() + "* show interation 01 (4 elements)...........");
         GenericMethods.showValues(
-                applicationWorkers.getPerson().getName(),
-                applicationWorkers.getPerson().getSurname(),
-                applicationWorkers.getPerson().getAge(),
+                applicationWorkers.getPerson(0),
+                applicationWorkers.getPerson(1),
+                applicationWorkers.getPerson(2),
+                applicationWorkers.getPerson(3));
 
-                applicationWorkers.getPerson().getSurname(),
-                applicationWorkers.getPerson().getName(),
-                applicationWorkers.getPerson().getAge());
+        System.out.println(System.lineSeparator() + "* show interation 02 (8 elements)...........");
+        GenericMethods.showValues(
+                applicationWorkers.getPerson(0),
+                applicationWorkers.getPerson(1),
+                applicationWorkers.getPerson(2),
+                applicationWorkers.getPerson(3),
+                applicationWorkers.getPerson(0),
+                applicationWorkers.getPerson(1),
+                applicationWorkers.getPerson(2),
+                applicationWorkers.getPerson(3));
 
         System.out.println("✅ process completed correctly");
     }

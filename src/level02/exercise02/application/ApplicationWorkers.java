@@ -1,6 +1,7 @@
 package level02.exercise02.application;
 
-import level01.exercise02.model.Person;
+import level02.exercise02.data.PersonsData;
+import level02.exercise02.model.Person;
 
 import java.util.ArrayList;
 
@@ -18,11 +19,11 @@ public class ApplicationWorkers {
         persons = new ArrayList<>();
     }
 
-    public void addPerson() {
-        persons.add(new Person("Marie", "Curie", 42));
+    public void addPersons() {
+        persons = PersonsData.loadPersons();
     }
 
-    public Person getPerson() {
-        return persons.get(0);
+    public Person getPerson(int index) {
+        return persons.get(index);
     }
 }

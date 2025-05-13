@@ -14,22 +14,31 @@ public class ApplicationController {
     public void run() {
         System.out.println("* CREATE GenericMethods..........." + System.lineSeparator());
 
-        applicationWorkers.addPerson();
+        applicationWorkers.addPersons();
 
+        System.out.println(System.lineSeparator() + "* show interation 01...........");
         GenericMethods.showThreeValues(
-                applicationWorkers.getPerson().getName(),
-                applicationWorkers.getPerson().getSurname(),
-                applicationWorkers.getPerson().getAge());
+                applicationWorkers.getPerson(0),
+                "esto es un String",
+                1234);
 
+        System.out.println(System.lineSeparator() + "* show interation 02...........");
         GenericMethods.showThreeValues(
-                applicationWorkers.getPerson().getAge(),
-                applicationWorkers.getPerson().getName(),
-                applicationWorkers.getPerson().getSurname());
+                1234,
+                applicationWorkers.getPerson(0),
+                "esto es un String");
 
+        System.out.println(System.lineSeparator() + "* show interation 03...........");
         GenericMethods.showThreeValues(
-                applicationWorkers.getPerson().getSurname(),
-                applicationWorkers.getPerson().getAge(),
-                applicationWorkers.getPerson().getName());
+                "esto es un String",
+                1234,
+                applicationWorkers.getPerson(0));
+
+        System.out.println(System.lineSeparator() + "* show interation 04...........");
+        GenericMethods.showThreeValues(
+                applicationWorkers.getPerson(1),
+                applicationWorkers.getPerson(2),
+                applicationWorkers.getPerson(3));
 
         System.out.println("✅ process completed correctly");
     }
